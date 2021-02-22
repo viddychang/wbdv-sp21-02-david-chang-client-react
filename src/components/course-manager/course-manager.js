@@ -155,6 +155,8 @@ class CourseManager extends React.Component {
                 </span>
               </div>
         </div>
+        <i class="fas fa-plus-circle color-red fa-2x wbdv-fa-icon-padding" id="fixed-button"
+          onClick={this.addCourse}></i>
         </div>
         
 
@@ -187,6 +189,9 @@ class CourseManager extends React.Component {
                 </span>
               </div>
         </div>
+          <i class="fas fa-plus-circle color-red fa-2x wbdv-fa-icon-padding" id="fixed-button"
+          onClick={this.addCourse}></i>
+
         </div>
 
         <CourseGrid

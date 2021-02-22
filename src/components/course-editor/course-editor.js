@@ -8,7 +8,7 @@ const CourseEditor = ({history}) =>
 <div>
     <h1>
             Course Editor
-        <i className="fas fa-times float-right wbdv-padding-right"
+        <i className="fas fa-times float-right wbdv-padding-right wbdv-top-padding-icon"
             onClick={() => history.goBack()}></i>
     </h1>
 <div class="wbdv-sticky-nav-bar">

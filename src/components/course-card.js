@@ -25,7 +25,9 @@ const CourseCard = ({deleteCourse, updateCourse, course, title}) => {
         <div className="card">
           <div className="card-body">
           {
-            !editing && <h5 className="card-title">{title}</h5>
+            !editing && <Link to="/courses/editor">
+              <h5 className="card-title color-black">{course.title}</h5>
+              </Link>
           }
           {
             editing && <input onChange={(event) => setNewTitle(event.target.value)}
