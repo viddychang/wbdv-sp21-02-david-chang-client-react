@@ -1,5 +1,5 @@
-.wbdv-sticky-nav-bar-manager {
-    /* background-color: dodgerblue; */
+.wbdv-sticky-nav-bar {
+    /* background-color: dodgerblue;*/
     position: fixed;
     width: 100%;
     z-index: 4;

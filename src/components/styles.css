@@ -42,5 +42,10 @@
 
 
 .wbdv-padding-sm-right {
-    padding-right:25px;
+    padding-right:15px;
+}
+
+
+.wbdv-top-padding-icon {
+    padding-top:5px;
 }

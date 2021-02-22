@@ -6,6 +6,7 @@ import {Link, Route} from "react-router-dom";
 import "./course-manager.css";
 import "../styles.css";
 import courseService, {findAllCourses, deleteCourse} from "../../services/course-service";
+import $ from "jquery";
 
 class CourseManager extends React.Component {
   state = {
@@ -126,10 +127,14 @@ class CourseManager extends React.Component {
   }
 
 
+
+
   render() {
     return(
+      <div>
+        <Route path="/courses/table">
         <div class="wbdv-sticky-nav-bar-manager wbdv-padding-10px" >
-          <div class="row">
+                    <div class="row clone-bar">
               <div class="col-1">
                   <i className="fas fa-bars fa-2x wbdv-fa-icon-top-padding"></i>
               </div>
@@ -141,22 +146,49 @@ class CourseManager extends React.Component {
                         id="courseNameInputFld" onChange={this.onTitleChange}
                         value={this.state.newCourse.title}/>
               </div>
-              <div class="col wbdv-padding-right">
+              <div class="col">
                 <span className="float-right">
-                    <i onClick={this.addCourse} class="fas fa-plus-circle color-red fa-2x wbdv-icon-padding pull-right"></i>
+                    <i onClick={this.addCourse} class="fas fa-plus-circle color-red fa-2x wbdv-icon-padding"></i>
                     <Link to="/">
-                      <i className="fas fa-2x fa-home wbdv-icon-padding"></i>
+                      <i className="fas fa-2x fa-home wbdv-icon-padding float-right wbdv-padding-sm-right"></i>
                     </Link>
                 </span>
               </div>
         </div>
-        <Route path="/courses/table">
+        </div>
+        
+
+        
         <CourseTable
             updateCourse={this.updateCourse}
             deleteCourse={this.deleteCourse}
             courses={this.state.courses}/>
       </Route>
       <Route path="/courses/grid">
+      <div class="wbdv-sticky-nav-bar-manager wbdv-padding-10px" >
+                    <div class="row clone-bar">
+              <div class="col-1">
+                  <i className="fas fa-bars fa-2x wbdv-fa-icon-top-padding"></i>
+              </div>
+              <div class="wbdv-top-padding col-2 d-none d-lg-block">
+                  <h5 class="color-black">Course Manager</h5>
+              </div>
+              <div class="col-7 wbdv-top-padding-input">
+                  <input type="text" class="form-control" placeholder="New Course Title" 
+                        id="courseNameInputFld" onChange={this.onTitleChange}
+                        value={this.state.newCourse.title}/>
+              </div>
+              <div class="col">
+                <span className="float-right">
+                    <i onClick={this.addCourse} class="fas fa-plus-circle color-red fa-2x wbdv-icon-padding"></i>
+                    <Link to="/">
+                      <i className="fas fa-2x fa-home wbdv-icon-padding float-right wbdv-padding-sm-right"></i>
+                    </Link>
+                </span>
+              </div>
+        </div>
+        </div>
+
         <CourseGrid
             updateCourse={this.updateCourse}
             deleteCourse={this.deleteCourse}

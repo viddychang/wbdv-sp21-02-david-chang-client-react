@@ -1,5 +1,6 @@
 import React, {useState} from 'react'
 import {Link} from "react-router-dom";
+import "./styles.css";
 
 const CourseRow = (
     {
@@ -52,7 +53,7 @@ const CourseRow = (
         <td className="d-sm-none d-md-none d-lg-table-cell d-none">{lastModified}</td>
         <td>
             <span className="float-right">
-                {!editing && <i onClick={() => setEditing(true)} className="fas fa-edit fa-lg wbdv-icon-padding"></i>}
+                {!editing && <i onClick={() => setEditing(true)} className="fas fa-edit fa-lg wbdv-icon-padding color-blue"></i>}
                 {editing && <i onClick={() => saveTitle()} className="fas fa-check text-success fa-lg wbdv-icon-padding"></i>}
                 {editing && <i onClick={() => deleteCourseTitle()} className="fas fa-times text-danger fa-lg wbdv-icon-padding"></i>}
             </span>

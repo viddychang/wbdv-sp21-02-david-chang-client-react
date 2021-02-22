@@ -1,5 +1,6 @@
 import React, {useState} from 'react'
 import {Link} from "react-router-dom";
+import "./styles.css";
 
 const CourseCard = ({deleteCourse, updateCourse, course, title}) => {
     const [editing, setEditing] = useState(false)
@@ -39,9 +40,9 @@ const CourseCard = ({deleteCourse, updateCourse, course, title}) => {
             {course.title}
           </Link>
             <div className="float-right">
-                {!editing && <i onClick={() => setEditing(true)} className="fas fa-2x fa-edit"></i>}
-                {editing && <i onClick={() => saveTitle()} className="fas fa-2x fa-check"></i>}
-                {editing && <i onClick={() => deleteTitle()} className="fas fa-2x fa-trash"></i>}
+                {!editing && <i onClick={() => setEditing(true)} className="fas fa-lg fa-edit color-blue "></i>}
+                {editing && <i onClick={() => saveTitle()} className="fas fa-lg fa-check wbdv-icon-padding text-success"></i>}
+                {editing && <i onClick={() => deleteTitle()} className="fas fa-lg fa-times wbdv-icon-padding text-danger"></i>}
             </div>
             
           </div>
