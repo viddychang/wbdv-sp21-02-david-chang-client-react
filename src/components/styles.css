@@ -1,0 +1,46 @@
+.color-red {
+    color:#f01c1c;
+}
+
+.color-white {
+    color:white;
+}
+
+.color-black {
+    color:black;
+}
+
+.color-blue{
+    color:blue;
+}
+
+.background-lightgrey{
+    background-color:lightgrey;
+}
+
+.wbdv-hidden {
+    display: none;
+}
+
+.wbdv-icon-padding {
+    padding: 5px;
+}
+
+/* https://www.w3schools.com/howto/howto_css_responsive_floats.asp */
+@media (max-width: 768px) {
+    .float-right-sm {
+      float: right;
+    }
+  }
+.align-center {
+    text-align:center;
+}
+
+.wbdv-padding-right {
+    padding-right:35px;
+}
+
+
+.wbdv-padding-sm-right {
+    padding-right:25px;
+}

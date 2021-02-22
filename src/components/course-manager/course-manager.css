@@ -1,0 +1,60 @@
+.wbdv-sticky-nav-bar-manager {
+    /* background-color: dodgerblue; */
+    position: fixed;
+    width: 100%;
+    z-index: 4;
+}
+
+.wbdv-padding-10px {
+    padding: 10px;
+}
+
+.wbdv-fa-icon-top-padding {
+    padding-top:5px;
+}
+
+.wbdv-top-padding {
+    padding-top:5px;
+}
+
+.wbdv-top-padding-input {
+    padding-top:2px;
+}
+
+.top-header-pad {
+    padding-top:30px;
+}
+
+.row-white-border {
+    background-color:white;
+    border: 1px solid #5b6977;
+    padding: 10px;
+}
+
+.wbdv-title-header {
+    background-color:lightgrey;
+    width: 100%;
+    padding-top:70px;
+    padding-bottom:5px;
+    z-index:2;
+    position:fixed;
+    border-bottom:1px solid #5b6977;
+}
+
+.row-wbdv-header {
+    margin:0;
+}
+
+.fa-icon-pad-left {
+    padding-left:5px;
+}
+
+.container-top-sticky-pad {
+    padding-top:105px;
+}
+
+#fixed-button {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+}

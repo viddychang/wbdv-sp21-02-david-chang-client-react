@@ -13,10 +13,12 @@ export default class CourseTable
   render() {
     return(
       <div>
+        <div className="container-fluid">
+
+        </div>
           <Link to="/courses/grid">
-            <i className="fas fa-2x fa-th float-right"></i>
+            <i className="fas fa-2x fa-th float-right color-black"></i>
           </Link>
-        <h2>Course Table</h2>
         <table className="table">
           <tbody>
           {/*<CourseRow title="CS1234" owner="alice" lastModified={"1/12/34"}/>*/}
