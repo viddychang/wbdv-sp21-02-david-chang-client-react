@@ -11,7 +11,6 @@ const CourseEditor = ({history}) =>
         <i className="fas fa-times float-right wbdv-padding-right"
             onClick={() => history.goBack()}></i>
     </h1>
-
 <div class="wbdv-sticky-nav-bar">
     <div class="row">
         <div class="col-1">
