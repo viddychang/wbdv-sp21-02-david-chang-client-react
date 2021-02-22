@@ -8,23 +8,38 @@ export default class CourseTable
   constructor(props) {
     super(props)
     console.log(props)
+    
   }
 
   render() {
     return(
-      <div>
-        <div className="container-fluid">
-
-        </div>
-          <Link to="/courses/grid">
-            <i className="fas fa-2x fa-th float-right color-black"></i>
-          </Link>
+        <div>
         <table className="table">
+          <thead>
+            <tr>
+              <th>
+                Title
+              </th>
+              <th className="d-sm-table-cell d-none">
+                Owned by
+              </th>
+              <th className="d-sm-none d-md-none d-lg-table-cell d-none">
+                Last modified
+              </th>
+              <th className="wbdv-padding-right">
+                <span className="float-right">
+                  <i className="fas fa-lg fa-folder wbdv-icon-padding"></i>
+                  <i className="fas fa-lg fa-sort wbdv-icon-padding"></i>
+                  <Link to="/courses/grid">
+                    <i className="fas fa-lg fa-th float-right color-black wbdv-icon-padding"></i>
+                  </Link>
+                </span>
+              </th>
+            </tr>
+          </thead>
           <tbody>
-          {/*<CourseRow title="CS1234" owner="alice" lastModified={"1/12/34"}/>*/}
-          {/*<CourseRow title="CS2345" owner="bob"   lastModified={"2/23/24"}/>*/}
-          {/*<CourseRow title="CS3456" owner="charlie" lastModified={"3/22/14"}/>*/}
-          {/*<CourseRow title="CS4567" owner="dan"   lastModified={"4/12/36"}/>*/}
+            
+
           {
             this.props.courses.map((course, ndx) =>
               <CourseRow

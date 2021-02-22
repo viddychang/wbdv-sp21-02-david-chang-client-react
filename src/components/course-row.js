@@ -22,14 +22,23 @@ const CourseRow = (
         updateCourse(newCourse)
     }
 
+    const deleteCourseTitle = () => {
+        setEditing(false)
+        deleteCourse(course)
+    }
+
   return (
       <tr>
         <td>
             {
                 !editing &&
                 <Link to="/courses/editor">
-                    {title}
+                    <i className="fa fa-file fa-lg wbdv-icon-padding"></i>
+                    <span className="color-black">
+                        {title}
+                    </span>
                 </Link>
+                
             }
             {
                 editing &&
@@ -39,12 +48,14 @@ const CourseRow = (
                     className="form-control"/>
             }
         </td>
-        <td>{owner}</td>
-        <td>{lastModified}</td>
+        <td className="d-sm-table-cell d-none">{owner}</td>
+        <td className="d-sm-none d-md-none d-lg-table-cell d-none">{lastModified}</td>
         <td>
-            <i onClick={() => deleteCourse(course)} className="fas fa-trash"></i>
-            {!editing && <i onClick={() => setEditing(true)} className="fas fa-edit"></i>}
-            {editing && <i onClick={() => saveTitle()} className="fas fa-check"></i>}
+            <span className="float-right">
+                {!editing && <i onClick={() => setEditing(true)} className="fas fa-edit fa-lg wbdv-icon-padding"></i>}
+                {editing && <i onClick={() => saveTitle()} className="fas fa-check text-success fa-lg wbdv-icon-padding"></i>}
+                {editing && <i onClick={() => deleteCourseTitle()} className="fas fa-times text-danger fa-lg wbdv-icon-padding"></i>}
+            </span>
         </td>
       </tr>
   )

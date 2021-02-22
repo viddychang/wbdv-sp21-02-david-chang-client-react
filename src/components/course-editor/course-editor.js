@@ -7,11 +7,8 @@ import {Link} from "react-router-dom";
 const CourseEditor = ({history}) =>
 <div>
     <h1>
-        <Link to="/courses/table">
-            <i className="fas fa-arrow-left"></i>
-        </Link>
             Course Editor
-        <i className="fas fa-times float-right"
+        <i className="fas fa-times float-right wbdv-padding-right"
             onClick={() => history.goBack()}></i>
     </h1>
 
