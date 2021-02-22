@@ -1,0 +1,19 @@
+.color-red {
+    color:#f01c1c;
+}
+
+.color-white {
+    color:white;
+}
+
+.color-blue{
+    color:blue;
+}
+
+.background-lightgrey{
+    background-color:lightgrey;
+}
+
+.wbdv-hidden {
+    display: none;
+}

@@ -1,34 +1,33 @@
 import React from 'react'
 import CourseTable from "./course-table";
-import CourseGrid from "./course-grid";
+import CourseGrid from "./course-grid/course-grid";
 import CourseEditor from "./course-editor";
 import {Link, Route} from "react-router-dom";
 import courseService, {findAllCourses, deleteCourse} from "../services/course-service";
 
 class CourseManager extends React.Component {
   state = {
-    courses: [],
-    qwe: 123,
-    sdf: 456
+    courses: []
   }
 
   updateCourse = (course) => {
     console.log(course)
     courseService.updateCourse(course._id, course)
-        .then(status => this.setState((prevState) => ({
-          ...prevState,
-          courses: prevState.courses.map(
-              (c) => c._id === course._id ? course : c)
-
-          // courses: prevState.courses.map(c => {
-          //   if(c._id === course._id) {
-          //     return course
-          //   } else {
-          //     return c
-          //   }
-          // })
-        })))
+        .then(status => {
+            this.setState((prevState) => {
+                var nextState = {...prevState}
+                nextState.courses = prevState.courses.map( c => {
+                    if (c._id === course._id) {
+                        return course
+                    } else {
+                        return c
+                    }
+                })
+                return nextState
+            })
+        })
   }
+
 
   componentDidMount = () =>
     // findAllCourses()
@@ -83,12 +82,14 @@ class CourseManager extends React.Component {
           // })
 
           this.setState((prevState) => ({
-              ...prevState,
               courses: prevState.courses.filter
                 (course => course !== courseToDelete)
           }))
         })
   }
+
+
+
 
   render() {
     return(

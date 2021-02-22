@@ -1,0 +1,52 @@
+.wbdv-sticky-nav-bar{
+    background-color: #393433;
+    color: white;
+    padding: 10px;
+    position: fixed;
+    width: 100%;
+    z-index: 1;
+}
+
+.nav-text-color {
+    color:grey;
+
+}
+
+.wbdv-padding-top {
+    padding-top:60px;
+}
+
+.nav-tabs {
+    border-bottom:none;
+}
+
+.left-bar {
+    background-color:#2a2a2a;
+    width: 100%;
+    padding:20px;
+    min-height:100vh;
+    }
+
+.list-group-item {
+    background:dimgrey;
+    margin:5px;
+}
+
+.list-add-item {
+    padding:.75rem 1rem;
+    position:relative;
+}
+
+.pill-style {
+    margin:5px;
+    background-color:grey;
+}
+
+.active-tab {
+    background-color:#2a2a2a:
+
+}
+
+.wbdv-top-padding-icon {
+    padding-top:5px;
+}
