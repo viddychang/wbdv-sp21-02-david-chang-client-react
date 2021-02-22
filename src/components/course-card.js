@@ -23,6 +23,8 @@ const CourseCard = ({deleteCourse, updateCourse, course, title}) => {
     return (
       <div className="col-sm-6 col-md-4 col-lg-3 col-xl-2">
         <div className="card">
+        <img src="https://www.valuecoders.com/blog/wp-content/uploads/2016/08/react.png"
+      className="card-img-top" alt="..."/>
           <div className="card-body">
           {
             !editing && <Link to="/courses/editor">
