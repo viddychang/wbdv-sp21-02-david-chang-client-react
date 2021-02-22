@@ -6,7 +6,6 @@ import {Link, Route} from "react-router-dom";
 import "./course-manager.css";
 import "../styles.css";
 import courseService, {findAllCourses, deleteCourse} from "../../services/course-service";
-import $ from "jquery";
 
 class CourseManager extends React.Component {
   state = {
