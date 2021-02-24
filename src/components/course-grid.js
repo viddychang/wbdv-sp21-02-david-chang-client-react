@@ -4,7 +4,7 @@ import {Link} from "react-router-dom";
 import "./styles.css";
 
 const CourseGrid = ({courses, deleteCourse, updateCourse}) =>
-  <div className="">
+  <div >
     <div className=" row pt-3"> 
       <div className="col-4 d-none d-sm-none d-md-block">
         <h5>

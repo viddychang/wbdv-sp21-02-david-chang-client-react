@@ -131,7 +131,10 @@ class CourseManager extends React.Component {
           <div class="wbdv-sticky-nav-bar-manager wbdv-padding-10px" >
           <div class="row clone-bar">
       <div class="col-1">
-        <i className="fas fa-bars fa-2x wbdv-fa-icon-top-padding"></i>
+        <Link to="/">
+          <i className="fas fa-bars fa-2x wbdv-fa-icon-top-padding color-black"
+              title="Go back to the Home page."></i>
+        </Link>
       </div>
       <div class="wbdv-top-padding col-2 d-none d-lg-block">
         <h5 class="color-black">Course Manager</h5>
@@ -144,9 +147,6 @@ class CourseManager extends React.Component {
       <div class="col">
       <span className="float-right">
           <i onClick={this.addCourse} class="fas fa-plus-circle color-red fa-2x wbdv-icon-padding"></i>
-          <Link to="/">
-            <i className="fas fa-2x fa-home wbdv-icon-padding float-right wbdv-padding-sm-right"></i>
-          </Link>
       </span>
       </div>
       </div>
