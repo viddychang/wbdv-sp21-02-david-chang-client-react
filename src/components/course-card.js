@@ -2,25 +2,31 @@ import React, {useState} from 'react'
 import {Link} from "react-router-dom";
 import "./styles.css";
 
-const CourseCard = ({deleteCourse, updateCourse, course, title}) => {
-    const [editing, setEditing] = useState(false)
-    const [newTitle, setNewTitle] = useState(title)
+const CourseCard = (
+  {
+    deleteCourse, 
+    updateCourse, 
+    course, 
+    titl
+  }) => {
+  const [editing, setEditing] = useState(false)
+  const [newTitle, setNewTitle] = useState(title)
 
-    const saveTitle = () => {
-        setEditing(false)
-        const newCourse = {
-            ...course,
-            title: newTitle
-        }
-        updateCourse(newCourse)
-    }
+  const saveTitle = () => {
+      setEditing(false)
+      const newCourse = {
+          ...course,
+          title: newTitle
+      }
+      updateCourse(newCourse)
+  }
 
-    const deleteTitle = () => {
-        setEditing(false)
-        deleteCourse(course)
-    }
+  const deleteTitle = () => {
+      setEditing(false)
+      deleteCourse(course)
+   }
 
-    return (
+  return (
       <div className="col-xs-12 col-sm-6 col-md-4 col-lg-3 col-xl-2 pb-3">
         <div className="card">
         <img src="https://www.valuecoders.com/blog/wp-content/uploads/2016/08/react.png"
@@ -53,7 +59,7 @@ const CourseCard = ({deleteCourse, updateCourse, course, title}) => {
         </div>
       </div>
     )
-}
+  }
 
 
 export default CourseCard
