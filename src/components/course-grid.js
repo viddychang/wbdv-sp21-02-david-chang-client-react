@@ -5,7 +5,7 @@ import "./styles.css";
 
 const CourseGrid = ({courses, deleteCourse, updateCourse}) =>
   <div >
-    <div className=" row pt-3"> 
+    <div className="row pt-3"> 
       <div className="col-4 d-none d-sm-none d-md-block">
         <h5>
           Recent Documents  
@@ -29,10 +29,7 @@ const CourseGrid = ({courses, deleteCourse, updateCourse}) =>
           </span>
       </div>
     </div>
-    <div className="row">
-      
-
-    </div>
+   
     <div className="row wbdv-padding-sm-right">
       {
         courses.map(course =>

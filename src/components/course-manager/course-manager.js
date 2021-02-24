@@ -11,9 +11,7 @@ class CourseManager extends React.Component {
   state = {
     courses: [],
     newCourse: {
-      title: '',
-      owner: "dc",
-      lastModified:"2/20/2021"
+      title: ""
 
     }
     
@@ -48,11 +46,13 @@ class CourseManager extends React.Component {
 
 
 
+  /* Helper to insert title and sample owner, description, and modified date  */
   onTitleChange = (e) => {
     this.setState({
       newCourse: {
         title: e.target.value,
         owner: 'dc',
+        description:"Lorem ipsum dolor sit amet, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
         lastModified:"2/20/2021"
       }
     })
@@ -72,11 +72,7 @@ class CourseManager extends React.Component {
                   course
               ]
             })))
-    this.setState({newCourse: {title:'',
-                                owner:'dc',
-                                lastModified:'2/20/2021'
-
-                }})
+    this.setState({newCourse: {title:''}})
 
     // this.state.courses.push(newCourse)
     // this.setState(this.state)
