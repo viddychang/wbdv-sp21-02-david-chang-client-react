@@ -7,7 +7,7 @@ const CourseCard = (
     deleteCourse, 
     updateCourse, 
     course, 
-    titl
+    title
   }) => {
   const [editing, setEditing] = useState(false)
   const [newTitle, setNewTitle] = useState(title)
