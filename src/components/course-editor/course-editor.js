@@ -5,18 +5,13 @@ import {Link} from "react-router-dom";
 
 // const CourseEditor = ({props}) =>
 const CourseEditor = ({history}) =>
-<div>
-    <h1>
-            Course Editor
-        <i className="fas fa-times float-right wbdv-padding-right wbdv-top-padding-icon"
-            onClick={() => history.goBack()}></i>
-    </h1>
+
+<div className="editor-shift-left"> 
+
 <div class="wbdv-sticky-nav-bar">
     <div class="row">
         <div class="col-1">
-            <a href="/home/home.template.client.html">
-                <i class="fa fa-times fa-2x color-white"></i>
-            </a>
+                <i class="fa fa-times fa-2x color-white" onClick={() => history.goBack()}></i>
         </div>
         <div class="col-2 d-none d-lg-block">
             <h4>

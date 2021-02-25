@@ -1,10 +1,16 @@
 .wbdv-sticky-nav-bar{
-    /* background-color: #393433;*/
+    background-color: #393433;
     color: white;
     padding: 10px;
     position: fixed;
     width: 100%;
     z-index: 1;
+
+}
+
+/* container-fluid in renderer causes the page html to be shifted to the right slightly */
+.editor-shift-left {
+    margin-left:-15px;
 }
 
 .nav-text-color {
