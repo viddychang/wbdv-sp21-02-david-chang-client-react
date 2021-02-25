@@ -1,5 +1,5 @@
 import React, {useEffect} from 'react';
-import './course-editor.css';
+import './course-editor.client.style.css';
 import '../styles.css';
 import {Link} from "react-router-dom";
 
