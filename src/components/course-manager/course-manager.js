@@ -1,9 +1,9 @@
 import React from 'react'
-import CourseTable from "../course-table";
-import CourseGrid from "../course-grid";
+import CourseTable from "../course-table/course-table";
+import CourseGrid from "../course-grid/course-grid";
 import CourseEditor from "../course-editor/course-editor";
 import {Link, Route} from "react-router-dom";
-import "./course-manager.css";
+import "./course-manager.client.styles.css";
 import "../styles.css";
 import courseService, {findAllCourses, deleteCourse} from "../../services/course-service";
 
@@ -11,7 +11,10 @@ class CourseManager extends React.Component {
   state = {
     courses: [],
     newCourse: {
-      title: ""
+      title: "",
+      description:"",
+      owner:"",
+      lastModified:""
 
     }
     
@@ -62,6 +65,10 @@ class CourseManager extends React.Component {
 
   addCourse = () => {
     const newAddCourse = this.state.newCourse
+    /* If the input is empty */
+    if (newAddCourse.title === "") {
+      newAddCourse.title = "New Course";
+    }
 
     courseService.createCourse(newAddCourse)
         .then(course => this.setState(
@@ -132,10 +139,10 @@ class CourseManager extends React.Component {
               title="Go back to the Home page."></i>
         </Link>
       </div>
-      <div class="wbdv-top-padding col-2 d-none d-lg-block">
+      <div class="wbdv-top-padding col-3-md d-none d-lg-block">
         <h5 class="color-black">Course Manager</h5>
       </div>
-      <div class="col-7 wbdv-top-padding-input">
+      <div class="col-8 wbdv-top-padding-input">
         <input type="text" class="form-control" placeholder="New Course Title" 
               id="courseNameInputFld" onChange={this.onTitleChange}
               value={this.state.newCourse.title}/>
