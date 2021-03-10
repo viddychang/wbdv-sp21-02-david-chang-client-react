@@ -40,6 +40,12 @@ const lessonReducer = (state=initialState, action) => {
                 })
             }
             return newState1
+        case "REFRESH_LESSONS":
+            const lessonRefreshState = {
+                ...state,
+                lessons: []
+            }
+            return lessonRefreshState
         
         default:
             return state

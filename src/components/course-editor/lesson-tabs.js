@@ -6,7 +6,7 @@ import lessonService from '../../services/lesson-service'
 
 const LessonTabs = (
     {
-        lessons=[],
+        myLessons=[],
         findLessonsForModule,
         createLessonForModule,
         deleteLesson,
@@ -14,18 +14,22 @@ const LessonTabs = (
 
     }) => {
     const {layout, courseId, moduleId, lessonId} = useParams();
+    // console.log(moduleId)
     useEffect(() => {
-        console.log("LOAD LESSONS FOR MODULE: " + moduleId)
         if(moduleId !== "undefined" && typeof moduleId !== "undefined") {
+            // console.log("LOAD LESSONS FOR MODULE: " + moduleId)
+
             findLessonsForModule(moduleId)
+            // console.log(myLessons)
         }
     }, [moduleId])
     return(
     <>
-        <ul class="nav nav-tabs nav-fill">
+    
+        <ul className="nav nav-tabs nav-fill">
             {
-                lessons.map(lesson =>
-                    <li className="nav-item">
+                myLessons.map(lesson =>
+                    <li className="nav-item color-black" key={lesson._id}>
                         <EditableItem
                             active={lesson._id === lessonId}
                             to={`/courses/${layout}/edit/${courseId}/modules/${moduleId}/lessons/${lesson._id}`}
@@ -35,16 +39,15 @@ const LessonTabs = (
                     </li>
                 )
             }
+             <i onClick={() => createLessonForModule(moduleId)} className="fa fa-plus fa-2x color-white wbdv-top-padding-icon float-right"></i>
+
 
         </ul>
-        <div className="col-1">
-            <i onClick={() => createLessonForModule(moduleId)} className="fa fa-plus fa-2x color-white wbdv-top-padding-icon float-right"></i>
-        </div>
     </>)}
 
 const stpm = (state) => {
     return {
-        lessons: state.lessonReducer.lessons
+        myLessons: state.lessonReducer.lessons
     }
 }
 
@@ -53,10 +56,11 @@ const dtpm = (dispatch) => ({
         // console.log("LOAD LESSONS FOR MODULE:")
         // console.log(moduleId)
         lessonService.findLessonsForModule(moduleId)
-            .then(lessons => dispatch({
-                type: "FIND_LESSONS",
-                lessons
+            .then(theLessons => dispatch({
+                type: "FIND_LESSONS_FOR_MODULE",
+                lessons: theLessons
             }))
+        
     },
     createLessonForModule: (moduleId) => {
         // console.log("CREATE LESSON FOR MODULE: " + moduleId)

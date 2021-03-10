@@ -10,19 +10,28 @@ const TopicPills = (
         createTopic,
         findTopicsForLesson,
         deleteTopic,
-        updateTopic
+        updateTopic,
+        refreshTopics
     }) => {
         const {layout, courseId, moduleId, lessonId, topicId } = useParams();
         useEffect(() => {
-            findTopicsForLesson(lessonId)
+            if (moduleId !== "undefined" 
+            && typeof moduleId !== "undefined" 
+            && lessonId !== "undefined" 
+            && typeof lessonId !== "undefined") {
+                findTopicsForLesson(lessonId)
+            } else {
+                refreshTopics()
 
-        }, [])
+            }
+
+        }, [moduleId, lessonId])
     return(
         <div>
-            <ul class="nav nav-pills nav-fill">
+            <ul className="nav nav-pills nav-fill">
                 {
                     topics.map(topic =>
-                        <li className="nav-item pill-style">
+                        <li className="nav-item pill-style" key={topic._id}>
                             <EditableItem
                                 active={topic._id === topicId}
                                 to={`/courses/${layout}/edit/${courseId}/modules/${moduleId}/lessons/${lessonId}/topics/${topic._id}`}
@@ -53,7 +62,7 @@ const TopicPills = (
             createTopic: (lessonId) => {
                 topicService.createTopic(lessonId, {title: "New Topic"})
                     .then(actualTopic => dispatch({
-                        type: "createTopic",
+                        type: "CREATE_TOPIC",
                         topic: actualTopic
                     }))
             },
@@ -75,6 +84,11 @@ const TopicPills = (
                         type: "FIND_TOPICS_FOR_LESSON",
                         topics: theTopics
                     }))
+            },
+            refreshTopics: () => {
+                dispatch({
+                    type: "REFRESH_TOPICS"
+                })
             }
         }
     }

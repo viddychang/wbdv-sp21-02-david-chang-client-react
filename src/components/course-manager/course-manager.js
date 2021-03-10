@@ -131,29 +131,29 @@ class CourseManager extends React.Component {
 
   renderHeader() {
     return(
-          <div class="wbdv-sticky-nav-bar-manager wbdv-padding-10px" >
-          <div class="row clone-bar">
-      <div class="col-1">
+          <div className="wbdv-sticky-nav-bar-manager wbdv-padding-10px" >
+          <div className="row clone-bar">
+      <div className="col-1">
         <Link to="/">
           <i className="fas fa-bars fa-2x wbdv-fa-icon-top-padding color-black"
               title="Go back to the Home page."></i>
         </Link>
       </div>
-      <div class="wbdv-top-padding col-3-md d-none d-lg-block">
-        <h5 class="color-black">Course Manager</h5>
+      <div className="wbdv-top-padding col-3-md d-none d-lg-block">
+        <h5 className="color-black">Course Manager</h5>
       </div>
-      <div class="col-8 wbdv-top-padding-input">
-        <input type="text" class="form-control" placeholder="New Course Title" 
+      <div className="col-8 wbdv-top-padding-input">
+        <input type="text" className="form-control" placeholder="New Course Title" 
               id="courseNameInputFld" onChange={this.onTitleChange}
               value={this.state.newCourse.title}/>
       </div>
-      <div class="col">
+      <div className="col">
       <span className="float-right">
           <i onClick={this.addCourse} class="fas fa-plus-circle color-red fa-2x wbdv-icon-padding"></i>
       </span>
       </div>
       </div>
-      <i class="fas fa-plus-circle color-red fa-2x wbdv-fa-icon-padding" id="fixed-button"
+      <i className="fas fa-plus-circle color-red fa-2x wbdv-fa-icon-padding" id="fixed-button"
       onClick={this.addCourse}></i>
       </div>
     )

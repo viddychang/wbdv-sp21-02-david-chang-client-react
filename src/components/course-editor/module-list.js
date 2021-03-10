@@ -10,11 +10,14 @@ const ModuleList = (
         createModule=() => alert("Create Module 234"),
         deleteModule=(item) => alert("delete " + item._id),
         updateModule,
-        findModulesForCourse=(courseId) => console.log(courseId)
+        findModulesForCourse=(courseId) => console.log(courseId),
+        refreshLessons
     }) => {
-    const {courseId, moduleId} = useParams();
+    const {layout, courseId, moduleId} = useParams();
     useEffect(() => {
         // alert(courseId)
+
+      
         findModulesForCourse(courseId)
     }, [])
     return(
@@ -22,9 +25,9 @@ const ModuleList = (
         <ul className="list-group">
             {
                 myModules.map(module =>
-                    <li className={`list-group-item ${module._id === moduleId ? 'active' : ''}`}>
+                    <li className={`list-group-item ${module._id === moduleId ? 'active' : ''}`} key={module._id}>
                         <EditableItem
-                            to={`/courses/editor/${courseId}/${module._id}`}
+                            to={`/courses/${layout}/edit/${courseId}/modules/${module._id}`}
                             updateItem={updateModule}
                             deleteItem={deleteModule}
                             active={true}
@@ -32,8 +35,8 @@ const ModuleList = (
                     </li>
                 )
             }
-            <li className="list-group-item">
-                <i onClick={() => createModule(courseId)} className="fas fa-plus fa-2x"></i>
+            <li className="list-add-item">
+                <i onClick={() => createModule(courseId)} className="fas fa-plus fa-lg float-right color-white"></i>
             </li>
         </ul>
     </div>)}
@@ -70,8 +73,22 @@ const dtpm = (dispatch) => {
                 .then(theModules => dispatch({
                     type: "FIND_MODULES_FOR_COURSE",
                     modules: theModules
-                }))
+                }))},
+        refreshLessons: () => {
+            dispatch({
+                type: "RERESH_LESSON"
+            })
+        },
+
+        refreshTopics: () => {
+            dispatch({
+                type: "REFRESH_TOPICS"
+            })
         }
+
+
+        
+
     }
 }
 

@@ -24,8 +24,7 @@ const store = createStore(reducer);
 // const CourseEditor = ({props}) =>
 const CourseEditor = ({history}) => {
     const { layout, courseId, moduleId } = useParams();
-    console.log(layout)
-    console.log(courseId)
+
 
     const [courseTitle, setCourseTitle] = useState(" ")
     courseService.findCourseById(courseId)
@@ -35,19 +34,19 @@ const CourseEditor = ({history}) => {
     <Provider store={store}>
         <div className="editor-shift-left"> 
 
-        <div class="wbdv-sticky-nav-bar">
-            <div class="row">
-                <div class="col-1">
+        <div className="wbdv-sticky-nav-bar">
+            <div className="row">
+                <div className="col-1">
                     <Link to={`/courses/${layout}`}>
-                        <i class="fa fa-times fa-2x color-white"></i>
+                        <i className="fa fa-times fa-2x color-white"></i>
                     </Link>
                 </div>
-                <div class="col-2 d-none d-lg-block">
+                <div className="col-2 d-none d-lg-block">
                     <h4>
                         {courseTitle}
                     </h4>
                 </div>
-                <div class="col-8">
+                <div className="col-8 float-right">
                     <LessonTabs/>
                 </div>
 
@@ -59,12 +58,12 @@ const CourseEditor = ({history}) => {
             </div>
         </div>
 
-                <div class="row wbdv-padding-top">
-                    <div class="col-4 left-bar" >
+                <div className="row wbdv-padding-top">
+                    <div className="col-4 left-bar" >
                         <ModuleList/>
 
                     </div>
-                    <div class="col-8">
+                    <div className="col-8">
                         <br/>
                         <TopicPills/>
                         <br/>

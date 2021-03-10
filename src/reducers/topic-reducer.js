@@ -39,6 +39,13 @@ const topicReducer = (state=initialState, action) => {
                 })
             }
             return newState1
+        case "REFRESH_TOPICS":
+            const topicRefreshState = {
+                ...state,
+                topics: []
+            }
+            return topicRefreshState
+
         default:
             return state
     }

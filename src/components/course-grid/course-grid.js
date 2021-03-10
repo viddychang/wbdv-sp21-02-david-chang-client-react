@@ -16,7 +16,7 @@ const CourseGrid = ({courses, deleteCourse, updateCourse}) =>
           <h5>
             Owned by me
           </h5>
-          <i class="fa fa-sort-down wbdv-icon-padding"></i>
+          <i className="fa fa-sort-down wbdv-icon-padding"></i>
         </div>
       </div>
       <div className="col-xs-4 col-lg-4 col-md-4 wbdv-padding-right">
