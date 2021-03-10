@@ -16,7 +16,6 @@ const EditableItem = (
             {
                 !editing &&
                 <>
-
                 <div className={`nav-link ${active?'active':''}`}>
                     <Link to={to} className="color-black">
                     
