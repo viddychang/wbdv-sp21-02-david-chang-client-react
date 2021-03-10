@@ -29,7 +29,7 @@ const LessonTabs = (
         <ul className="nav nav-tabs nav-fill">
             {
                 myLessons.map(lesson =>
-                    <li className="nav-item color-black" key={lesson._id}>
+                    <li className="nav-item" key={lesson._id}>
                         <EditableItem
                             active={lesson._id === lessonId}
                             to={`/courses/${layout}/edit/${courseId}/modules/${moduleId}/lessons/${lesson._id}`}
@@ -39,7 +39,7 @@ const LessonTabs = (
                     </li>
                 )
             }
-             <i onClick={() => createLessonForModule(moduleId)} className="fa fa-plus fa-2x color-white wbdv-top-padding-icon float-right"></i>
+             <i onClick={() => createLessonForModule(moduleId)} className="fa fa-plus fa-2x color-black wbdv-top-padding-icon float-right padding-left-10px"></i>
 
 
         </ul>

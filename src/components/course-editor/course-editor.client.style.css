@@ -54,5 +54,21 @@
 }
 
 .list-group-item.active {
+    color: blue;
+}
+
+
+.nav-tabs .nav-link.active {
+    background-color: dodgerblue;
     color: white;
+    border:1px solid #5d3d48;
+    
+}
+
+.nav-tabs .nav-link {
+    border: 1px solid #5d3d48;
+} 
+
+.padding-left-10px {
+    padding-left:10px;
 }

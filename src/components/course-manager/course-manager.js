@@ -162,7 +162,7 @@ class CourseManager extends React.Component {
   render() {
     return(
       <div>
-        <Route path="/courses/table">
+        <Route path="/courses/table" exact={true}>
         {this.renderHeader()}
         
         <CourseTable

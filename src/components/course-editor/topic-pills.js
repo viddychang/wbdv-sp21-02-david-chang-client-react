@@ -31,7 +31,7 @@ const TopicPills = (
             <ul className="nav nav-pills nav-fill">
                 {
                     topics.map(topic =>
-                        <li className="nav-item pill-style" key={topic._id}>
+                        <li className="nav-item" key={topic._id}>
                             <EditableItem
                                 active={topic._id === topicId}
                                 to={`/courses/${layout}/edit/${courseId}/modules/${moduleId}/lessons/${lessonId}/topics/${topic._id}`}
@@ -43,10 +43,9 @@ const TopicPills = (
 
                         )
                 }
-                <li className="nav-item pill-style">
-                    <i onClick={() => createTopic(lessonId)} className='fa fa-plus color-white'></i>
+                
+            <i onClick={() => createTopic(lessonId)} className='fa fa-plus fa-2x color-black wbdv-top-padding-icon float-right padding-left-10px'></i>
 
-                </li>
 
             </ul>
         </div>

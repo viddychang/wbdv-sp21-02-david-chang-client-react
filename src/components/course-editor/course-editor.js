@@ -24,6 +24,7 @@ const store = createStore(reducer);
 // const CourseEditor = ({props}) =>
 const CourseEditor = ({history}) => {
     const { layout, courseId, moduleId } = useParams();
+    console.log(layout);
 
 
     const [courseTitle, setCourseTitle] = useState(" ")
@@ -46,9 +47,6 @@ const CourseEditor = ({history}) => {
                         {courseTitle}
                     </h4>
                 </div>
-                <div className="col-8 float-right">
-                    <LessonTabs/>
-                </div>
 
 {/*                 <div class="col-1">
                     <a href="#">
@@ -64,6 +62,9 @@ const CourseEditor = ({history}) => {
 
                     </div>
                     <div className="col-8">
+                    <br/>
+
+                    <LessonTabs/>
                         <br/>
                         <TopicPills/>
                         <br/>
