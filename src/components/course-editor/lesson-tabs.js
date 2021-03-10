@@ -21,7 +21,7 @@ const LessonTabs = (
         }
     }, [moduleId])
     return(
-    <div>
+    <>
         <ul class="nav nav-tabs nav-fill">
             {
                 lessons.map(lesson =>
@@ -35,11 +35,12 @@ const LessonTabs = (
                     </li>
                 )
             }
-            <li>
-                <i onClick={() => createLessonForModule(moduleId)} className="fas fa-plus"></i>
-            </li>
+
         </ul>
-    </div>)}
+        <div className="col-1">
+            <i onClick={() => createLessonForModule(moduleId)} className="fa fa-plus fa-2x color-white wbdv-top-padding-icon float-right"></i>
+        </div>
+    </>)}
 
 const stpm = (state) => {
     return {

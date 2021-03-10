@@ -23,7 +23,10 @@ const store = createStore(reducer);
 
 // const CourseEditor = ({props}) =>
 const CourseEditor = ({history}) => {
-    const { courseId } = useParams();
+    const { layout, courseId, moduleId } = useParams();
+    console.log(layout)
+    console.log(courseId)
+
     const [courseTitle, setCourseTitle] = useState(" ")
     courseService.findCourseById(courseId)
         .then(status => setCourseTitle(status.title)) 
@@ -35,7 +38,9 @@ const CourseEditor = ({history}) => {
         <div class="wbdv-sticky-nav-bar">
             <div class="row">
                 <div class="col-1">
-                        <i class="fa fa-times fa-2x color-white" onClick={() => history.goBack()}></i>
+                    <Link to={`/courses/${layout}`}>
+                        <i class="fa fa-times fa-2x color-white"></i>
+                    </Link>
                 </div>
                 <div class="col-2 d-none d-lg-block">
                     <h4>

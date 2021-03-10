@@ -33,7 +33,7 @@ const CourseCard = (
       className="card-img-top" alt="..."/>
           <div className="card-body">
           {
-            !editing && <Link to="/courses/editor">
+            !editing && <Link to={`/courses/grid/edit/${course._id}`}>
               <h5 className="card-title color-black">{course.title}</h5>
               </Link>
           }
@@ -46,7 +46,7 @@ const CourseCard = (
           <p className="card-text">
             {course.description}
           </p>
-          <Link to="/courses/editor" className="btn btn-primary">
+          <Link to={`/courses/grid/edit/${course._id}`} className="btn btn-primary">
             {course.title}
           </Link>
             <div className="float-right">

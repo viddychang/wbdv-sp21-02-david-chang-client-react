@@ -33,7 +33,7 @@ const CourseRow = (
         <td>
             {
                 !editing &&
-                <Link to="/courses/editor">
+                <Link to={`/courses/grid/edit/${course._id}`}>
                     <i className="fa fa-file fa-lg wbdv-icon-padding"></i>
                     <span className="color-black">
                         {title}
