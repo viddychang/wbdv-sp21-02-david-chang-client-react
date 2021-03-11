@@ -25,11 +25,12 @@ const LessonTabs = (
         } else {
             refreshLesson();
         }
+
     }, [moduleId])
     return(
     <>
     
-        <ul className="nav nav-tabs nav-fill">
+        <ul className="nav nav-tabs nav-fill bb pb-2">
             {
                 myLessons.map(lesson =>
                     <li className="nav-item" key={lesson._id}>

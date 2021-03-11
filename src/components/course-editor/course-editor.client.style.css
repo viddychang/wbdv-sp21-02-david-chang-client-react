@@ -57,7 +57,8 @@
 .nav-tabs .nav-link.active {
     background-color: dodgerblue;
     color: white;
-    border:1px solid #5d3d48;
+    border:1px solid #dee2e6;
+    
     
 }
 
@@ -67,5 +68,13 @@
 }
 
 .nav-item {
-    border: 1px solid #5d3d48;
+    border: 1px solid #dee2e6;
+
+}
+
+
+
+.nav-tabs {
+
+    border-bottom: 1px solid #dee2e6;
 }
