@@ -13,7 +13,7 @@ const EditableItem = (
     const [editing, setEditing] = useState(false)
     const [cachedItem, setCachedItem] = useState(item)
     return (
-        <div>
+        <>
             {
                 !editing &&
                 <>
@@ -46,7 +46,7 @@ const EditableItem = (
                     <i onClick={() => deleteItem(item)} className="fas fa-times float-right wbdv-icon-padding color-white"></i>
                 </div>
             }
-        </div>
+        </>
     )
 }
 

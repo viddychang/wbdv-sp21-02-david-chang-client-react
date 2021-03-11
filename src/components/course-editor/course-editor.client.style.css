@@ -55,6 +55,8 @@
     color: white;
     border:1px solid #dee2e6;
     border-bottom: transparent;
+    max-width: 100%;
+
     
 }
 
@@ -62,6 +64,7 @@
     color: white;
     border:1px solid #dee2e6;
     border-bottom: transparent;
+    
 
 }
 
@@ -69,6 +72,7 @@
     color: white;
     border:1px solid #dee2e6;
     border-bottom: transparent;
+    
 
     
 }
