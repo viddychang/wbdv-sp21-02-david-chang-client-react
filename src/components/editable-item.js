@@ -30,7 +30,7 @@ const EditableItem = (
             }
             {
                 editing &&
-                <div className={`nav-link list-group-item active`}>
+                <div className={`nav-link edit-active`}>
                     <input 
                         
                         onChange={(e) =>

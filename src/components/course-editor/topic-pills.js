@@ -34,6 +34,7 @@ const TopicPills = (
                         <li className='nav-item' key={topic._id}>
                             <EditableItem
                                 active={topic._id === topicId}
+    
                                 to={`/courses/${layout}/edit/${courseId}/modules/${moduleId}/lessons/${lessonId}/topics/${topic._id}`}
                                 deleteItem={deleteTopic}
                                 updateItem={updateTopic}
