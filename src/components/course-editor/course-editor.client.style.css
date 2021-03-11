@@ -61,12 +61,15 @@
     background-color: dodgerblue;
     color: white;
     border:1px solid #dee2e6;
+
 }
 
 .nav-pills .active {
     background-color: dodgerblue;
     color: white;
     border:1px solid #dee2e6;
+
+    
 }
 
 .padding-left-10px {
@@ -95,4 +98,13 @@
 .nav-text-color {
     color:rgb(31, 21, 21);
 
+}
+
+.right-bar {
+    padding:20px;
+
+}
+
+.wbdv-5px-pad {
+    padding:5px;
 }

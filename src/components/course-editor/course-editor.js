@@ -61,7 +61,7 @@ const CourseEditor = ({history}) => {
                         <ModuleList/>
 
                     </div>
-                    <div className="col-8">
+                    <div className="col-8 right-bar ">
                     <br/>
 
                     <LessonTabs/>

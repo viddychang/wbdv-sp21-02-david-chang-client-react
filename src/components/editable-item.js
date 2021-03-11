@@ -30,7 +30,7 @@ const EditableItem = (
             {
                 editing &&
                 <>
-                    <input
+                    <input className="wbdv-5px-pad"
                         onChange={(e) =>
                             setCachedItem({
                                 ...cachedItem,
