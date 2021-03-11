@@ -54,20 +54,21 @@
     background-color: dodgerblue;
     color: white;
     border:1px solid #dee2e6;
+    border-bottom: transparent;
     
 }
 
 .nav-tabs .active {
-    background-color: dodgerblue;
     color: white;
     border:1px solid #dee2e6;
+    border-bottom: transparent;
 
 }
 
 .nav-pills .active {
-    background-color: dodgerblue;
     color: white;
     border:1px solid #dee2e6;
+    border-bottom: transparent;
 
     
 }
@@ -107,4 +108,8 @@
 
 .wbdv-5px-pad {
     padding:5px;
+}
+
+.edit-active {
+    color: #007bff;
 }

@@ -33,7 +33,7 @@ const LessonTabs = (
         <ul className="nav nav-tabs nav-fill bb pb-2">
             {
                 myLessons.map(lesson =>
-                    <li className={`nav-item ${lesson._id === lessonId ? 'active' : ''}`} key={lesson._id}>
+                    <li className='nav-item' key={lesson._id}>
                         <EditableItem
                             active={lesson._id === lessonId}
                             to={`/courses/${layout}/edit/${courseId}/modules/${moduleId}/lessons/${lesson._id}`}

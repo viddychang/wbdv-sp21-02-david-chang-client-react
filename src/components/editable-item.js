@@ -7,12 +7,13 @@ const EditableItem = (
         deleteItem,
         updateItem,
         item,
-        active
+        active,
+        
     }) => {
     const [editing, setEditing] = useState(false)
     const [cachedItem, setCachedItem] = useState(item)
     return (
-        <>
+        <div>
             {
                 !editing &&
                 <>
@@ -29,8 +30,9 @@ const EditableItem = (
             }
             {
                 editing &&
-                <>
-                    <input className="wbdv-5px-pad"
+                <div className={`nav-link list-group-item active`}>
+                    <input 
+                        
                         onChange={(e) =>
                             setCachedItem({
                                 ...cachedItem,
@@ -40,11 +42,11 @@ const EditableItem = (
                     <i onClick={() => {
                         setEditing(false)
                         updateItem(cachedItem)
-                    }} className="fas fa-check float-right wbdv-icon-padding"></i>
-                    <i onClick={() => deleteItem(item)} className="fas fa-times float-right wbdv-icon-padding"></i>
-                </>
+                    }} className="fas fa-check float-right wbdv-icon-padding color-white"></i>
+                    <i onClick={() => deleteItem(item)} className="fas fa-times float-right wbdv-icon-padding color-white"></i>
+                </div>
             }
-        </>
+        </div>
     )
 }
 
