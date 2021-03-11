@@ -33,7 +33,8 @@ const ModuleList = (
                             updateItem={updateModule}
                             deleteItem={deleteModule}
                             active={true}
-                            item={module}/>
+                            item={module}
+                            />
                     </li>
                 )
             }
