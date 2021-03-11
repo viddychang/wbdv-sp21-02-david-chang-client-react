@@ -11,13 +11,13 @@ const ModuleList = (
         deleteModule=(item) => alert("delete " + item._id),
         updateModule,
         findModulesForCourse=(courseId) => console.log(courseId),
-        refreshLessons
+
     }) => {
     const {layout, courseId, moduleId} = useParams();
     useEffect(() => {
         // alert(courseId)
+        
 
-      
         findModulesForCourse(courseId)
     }, [])
     return(
@@ -74,19 +74,13 @@ const dtpm = (dispatch) => {
                     type: "FIND_MODULES_FOR_COURSE",
                     modules: theModules
                 }))},
-        refreshLessons: () => {
-            dispatch({
-                type: "RERESH_LESSON"
-            })
-        },
+
 
         refreshTopics: () => {
             dispatch({
                 type: "REFRESH_TOPICS"
             })
         }
-
-
         
 
     }

@@ -40,8 +40,8 @@ const EditableItem = (
                     <i onClick={() => {
                         setEditing(false)
                         updateItem(cachedItem)
-                    }} className="fas fa-check float-right"></i>
-                    <i onClick={() => deleteItem(item)} className="fas fa-times float-right"></i>
+                    }} className="fas fa-check float-right wbdv-icon-padding"></i>
+                    <i onClick={() => deleteItem(item)} className="fas fa-times float-right wbdv-icon-padding"></i>
                 </>
             }
         </>

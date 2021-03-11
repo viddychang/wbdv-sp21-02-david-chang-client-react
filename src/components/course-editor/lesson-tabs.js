@@ -10,7 +10,8 @@ const LessonTabs = (
         findLessonsForModule,
         createLessonForModule,
         deleteLesson,
-        updateLesson
+        updateLesson,
+        refreshLesson
 
     }) => {
     const {layout, courseId, moduleId, lessonId} = useParams();
@@ -21,6 +22,8 @@ const LessonTabs = (
 
             findLessonsForModule(moduleId)
             // console.log(myLessons)
+        } else {
+            refreshLesson();
         }
     }, [moduleId])
     return(
@@ -77,6 +80,11 @@ const dtpm = (dispatch) => ({
                 type: "UPDATE_LESSON",
                 lesson
             })),
+    refreshLesson: () => {
+        dispatch({
+            type: "REFRESH_LESSONS"
+            })
+        },
     deleteLesson: (item) =>
         lessonService.deleteLesson(item._id)
             .then(status => dispatch({
