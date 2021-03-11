@@ -13,10 +13,6 @@
     margin-left:-15px;
 }
 
-.nav-text-color {
-    color:grey;
-
-}
 
 .wbdv-padding-top {
     padding-top:60px;
@@ -59,9 +55,19 @@
     color: white;
     border:1px solid #dee2e6;
     
-    
 }
 
+.nav-tabs .active {
+    background-color: dodgerblue;
+    color: white;
+    border:1px solid #dee2e6;
+}
+
+.nav-pills .active {
+    background-color: dodgerblue;
+    color: white;
+    border:1px solid #dee2e6;
+}
 
 .padding-left-10px {
     padding-left:10px;
@@ -72,9 +78,21 @@
 
 }
 
+.nav .active a {
+    color:white;
+}
 
+.list-group-item.active a {
+    color:white;
+
+}
 
 .nav-tabs {
 
     border-bottom: 1px solid #dee2e6;
+}
+
+.nav-text-color {
+    color:rgb(31, 21, 21);
+
 }
