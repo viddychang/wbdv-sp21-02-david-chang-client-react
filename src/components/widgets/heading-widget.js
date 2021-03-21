@@ -40,6 +40,7 @@ const HeadingWidget = (
                         <select value={cachedItem.size} 
                                 onChange={(event) => setCachedItem({
                                     ...cachedItem,
+                                    // https://stackoverflow.com/questions/41773778/sending-number-instead-of-string-from-select-in-react-component
                                     size: parseInt(event.target.value, 10)
                                 })}
                                 className="form-control">
