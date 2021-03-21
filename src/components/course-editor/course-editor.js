@@ -22,17 +22,18 @@ const store = createStore(reducer);
 
 
 // const CourseEditor = ({props}) =>
-const CourseEditor = ({history}) => {
+const CourseEditor = () => {
     const { layout, courseId, moduleId } = useParams();
     console.log(layout);
-
 
     const [courseTitle, setCourseTitle] = useState(" ")
     courseService.findCourseById(courseId)
         .then(status => setCourseTitle(status.title)) 
 
     return (
+        
     <Provider store={store}>
+
         <div className="editor-shift-left"> 
 
         <div className="wbdv-sticky-nav-bar">
