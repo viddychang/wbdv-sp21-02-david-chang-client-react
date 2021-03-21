@@ -11,11 +11,14 @@ import lessonReducer from "../../reducers/lesson-reducer";
 import topicReducer from "../../reducers/topic-reducer";
 import {combineReducers, createStore} from "redux";
 import {Provider} from "react-redux";
+import widgetReducer from "../../reducers/widget-reducer";
+import WidgetList from "../widgets/widget-list"
 
 const reducer = combineReducers({
     moduleReducer: moduleReducer,
     lessonReducer: lessonReducer,
-    topicReducer: topicReducer
+    topicReducer: topicReducer,
+    widgetReducer: widgetReducer
 })
 
 const store = createStore(reducer);
@@ -69,7 +72,7 @@ const CourseEditor = () => {
                         <br/>
                         <TopicPills/>
                         <br/>
-                        content intentionally left blank
+                        <WidgetList/>
                     </div>
                 </div>
                 </div>

@@ -1,13 +1,47 @@
-import React from 'react'
+import React, {useState} from 'react'
 
-const HeadingWidget = ({widget, editing}) => {
+const HeadingWidget = (
+    {
+        widget, 
+        updateWidget, 
+        deleteWidget
+    }) => {
+    const [editing, setEditing] = useState(false)
+    const [cachedItem, setCachedItem] = useState(widget)
     return(
         <>
             {
                 editing &&
                     <>
-                        <input value={widget.text} className="form-control"/>
-                        <select value={widget.size} className="form-control">
+                        <i onClick={() => { updateWidget(widget.id, cachedItem) 
+                            setEditing(false)}}
+                            className="fas fa-check fa-lg float-right wbdv-icon-padding"></i>
+                        <i onClick={() => { deleteWidget(widget.id)
+                            setEditing(false)}}
+                            className="fas fa-trash fa-lg float-right wbdv-icon-padding">
+                        </i>
+                    <select onChange={(event) => setCachedItem({
+                        ...cachedItem,
+                        type: event.target.value
+                        })} className="form-control mb-3">
+                        <option value="HEADING">Heading</option>
+                        <option value="PARAGRAPH">Paragraph</option>
+
+                    </select>
+                                
+
+                        <input value={cachedItem.text} 
+                                onChange={(event) => setCachedItem({
+                                    ...cachedItem,
+                                    text: event.target.value
+                                })}
+                                className="form-control"/>
+                        <select value={cachedItem.size} 
+                                onChange={(event) => setCachedItem({
+                                    ...cachedItem,
+                                    size: event.target.value
+                                })}
+                                className="form-control">
                             <option value={1}>Heading 1</option>
                             <option value={2}>Heading 2</option>
                             <option value={3}>Heading 3</option>
@@ -20,6 +54,8 @@ const HeadingWidget = ({widget, editing}) => {
             {
                 !editing &&
                     <>
+                        <i onClick={() => setEditing(true)}
+                            className="fas fa-cog fa-lg float-right wbdv-icon-padding"></i>
                         {widget.size === 1 && <h1>{widget.text}</h1>}
                         {widget.size === 2 && <h2>{widget.text}</h2>}
                         {widget.size === 3 && <h3>{widget.text}</h3>}
