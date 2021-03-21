@@ -24,8 +24,9 @@ const WidgetList = (
 
     return (
         <div>
-            <i onClick={() => createWidget(topicId)} className="fas fa-plus fa-2x float-right"></i>
-            
+            <div className="text-right"> 
+                <i onClick={() => createWidget(topicId)} className="fas fa-plus fa-2x align-right"></i>
+            </div>
             <ul className="list-group">
                 {
                     widgets.map(widget =>

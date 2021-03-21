@@ -20,6 +20,8 @@ const HeadingWidget = (
                             setEditing(false)}}
                             className="fas fa-trash fa-lg float-right wbdv-icon-padding">
                         </i>
+                    <div className="col-md-10 col-lg-11 col-sm-10 col-9">
+
                     <select onChange={(event) => setCachedItem({
                         ...cachedItem,
                         type: event.target.value
@@ -51,6 +53,8 @@ const HeadingWidget = (
                             <option value={5}>Heading 5</option>
                             <option value={6}>Heading 6</option>
                         </select>
+                        </div>
+
                     </>
             }
             {
