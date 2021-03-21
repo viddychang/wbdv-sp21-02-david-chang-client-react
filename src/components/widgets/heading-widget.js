@@ -40,7 +40,7 @@ const HeadingWidget = (
                         <select value={cachedItem.size} 
                                 onChange={(event) => setCachedItem({
                                     ...cachedItem,
-                                    size: event.target.value
+                                    size: parseInt(event.target.value, 10)
                                 })}
                                 className="form-control">
                             <option value={1}>Heading 1</option>

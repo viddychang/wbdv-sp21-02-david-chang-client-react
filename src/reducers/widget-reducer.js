@@ -5,7 +5,7 @@ const initialState = {
 const widgetReducer = (state=initialState, action) => {
     switch (action.type) {
         case "CREATE_WIDGET":
-            console.log(action.widget)
+            // console.log(action.widget)
             return {
                 ...state,
                 widgets: [
@@ -18,11 +18,14 @@ const widgetReducer = (state=initialState, action) => {
             return {
                 ...state,
                 widgets: action.widgets
+
             }
+            
         case "UPDATE_WIDGET":
             return {
                 widgets: state.widgets.map(widget => {
-                    // console.log(action.widget)
+                    console.log(action.widget)
+                    console.log(widget)
                     if(widget.id === action.widget.id) {
                         return action.widget
                     } else {
