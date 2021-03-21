@@ -25,12 +25,13 @@ const ParagraphWidget = (
                         ...cachedItem,
                         type: event.target.value
                     })}
-                        className="form-control mb-3">
+                        className="form-control mb-3"
+                        value={cachedItem.type}>
                         <option value="PARAGRAPH">Paragraph</option>
                         <option value="HEADING">Heading</option>
                     </select>
                     <textarea value={cachedItem.text} 
-                    className="form-control"
+                    className="form-control mb-3"
                     onChange={(event) => setCachedItem({
                         ...cachedItem,
                         text: event.target.value

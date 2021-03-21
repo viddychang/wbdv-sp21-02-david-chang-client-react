@@ -11,13 +11,16 @@ const WidgetList = (
         createWidget,
         findWidgetsForTopic,
         updateWidget,
-        deleteWidget
+        deleteWidget,
+        refreshWidgets
     }
     ) => {
     const {topicId} = useParams();
     useEffect(() => {
         findWidgetsForTopic(topicId)
+        
     }, [topicId])
+    // console.log(widgets);
 
     return (
         <div>
@@ -65,18 +68,18 @@ const dtpm = (dispatch) => ({
     },
     createWidget: (tid) => {
         widgetService.createWidget(tid, 
-            {type:"PARAGRAPH", size: 1, text: "New Widget", widgetOrder: "1"})
+            {type:"HEADING", size: 1, text: "New Widget"})
             .then(widget => dispatch({
                 type: "CREATE_WIDGET",
                 widget
             }))
     },
-    updateWidget: (wid, widget) => {
-        widgetService.updateWidget(wid, widget)
+    updateWidget: (updatedWid, updatedWidget) => {
+        widgetService.updateWidget(updatedWid, updatedWidget)
             .then(widget => dispatch ({
                 type: "UPDATE_WIDGET",
-                wid,
-                widget
+                widget: updatedWidget,
+                wid: updatedWid
             }))
     },
     deleteWidget: (wid) => {
@@ -85,6 +88,11 @@ const dtpm = (dispatch) => ({
                 type: "DELETE_WIDGET",
                 widgetToDelete: wid
             }))
+    },
+    refreshWidgets: () => {
+        dispatch({
+            type: "REFRESH_WIDGETS"
+        })
     }
 
 })
