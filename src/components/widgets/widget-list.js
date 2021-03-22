@@ -16,10 +16,14 @@ const WidgetList = (
     }
     ) => {
     const {topicId} = useParams();
+    console.log(topicId)
+
     useEffect(() => {
         if (topicId !== "undefined" && typeof topicId !== "undefined") {
             findWidgetsForTopic(topicId)
+
         } else {
+                    
             refreshWidgets()
         }
         
