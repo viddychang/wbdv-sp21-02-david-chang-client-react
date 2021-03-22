@@ -22,7 +22,7 @@ const WidgetList = (
             findWidgetsForTopic(topicId)
 
         } else {
-            console.log(topicId)
+            // console.log(topicId)
     
             findWidgetsForTopic(topicId)
 
