@@ -16,15 +16,16 @@ const WidgetList = (
     }
     ) => {
     const {topicId} = useParams();
-    console.log(topicId)
 
     useEffect(() => {
         if (topicId !== "undefined" && typeof topicId !== "undefined") {
             findWidgetsForTopic(topicId)
 
         } else {
-                    
-            refreshWidgets()
+            console.log(topicId)
+    
+            findWidgetsForTopic(topicId)
+
         }
         
     }, [topicId])
@@ -76,12 +77,15 @@ const dtpm = (dispatch) => ({
             }))
     },
     createWidget: (tid) => {
+        // console.log(tid)
+        // only creates widget if topic is selected
+        if (tid !== "undefined" && typeof tid !== "undefined") {
         widgetService.createWidget(tid, 
             {type:"HEADING", size: 1, text: "New Widget"})
             .then(widget => dispatch({
                 type: "CREATE_WIDGET",
                 widget
-            }))
+            }))}
     },
     updateWidget: (updatedWid, updatedWidget) => {
         widgetService.updateWidget(updatedWid, updatedWidget)
