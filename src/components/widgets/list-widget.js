@@ -9,7 +9,6 @@ const ListWidget = (
 
     const [editing, setEditing] = useState(false)
     const [cachedItem, setCachedItem] = useState(widget)
-
     return(
         <div>
             {

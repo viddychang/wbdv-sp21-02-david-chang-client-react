@@ -32,7 +32,6 @@ const WidgetList = (
         
     }, [topicId])
     // console.log(widgets);
-
     return (
         <div>
             <div className="text-right"> 
