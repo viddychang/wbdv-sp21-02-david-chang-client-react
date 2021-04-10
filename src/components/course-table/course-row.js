@@ -52,6 +52,11 @@ const CourseRow = (
         <td className="d-sm-table-cell d-none">{owner}</td>
         <td className="d-sm-none d-md-none d-lg-table-cell d-none">{lastModified}</td>
         <td>
+              <Link to={`/courses/${course._id}/quizzes`}>
+                  Quizzes
+              </Link>
+          </td>
+        <td>
             <span className="float-right">
                 {!editing && <i onClick={() => setEditing(true)} className="fas fa-edit fa-lg wbdv-icon-padding color-blue"></i>}
                 {editing && <i onClick={() => saveTitle()} className="fas fa-check text-success fa-lg wbdv-icon-padding"></i>}
