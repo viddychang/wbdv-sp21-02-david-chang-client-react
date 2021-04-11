@@ -17,7 +17,7 @@ const Quiz = () => {
 
     return(
         <div>
-            <h3>Quiz {quizId} ({questions.length})</h3>
+            <h3>Quiz {quizId} </h3>
             <ul>
                 {
                     questions.map((question) => {

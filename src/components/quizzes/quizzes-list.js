@@ -14,14 +14,17 @@ const QuizzesList = () => {
     }, [])
     return(
         <div>
-            <h2>Quizzes ({quizzes.length})</h2>
+            <h2>Quizzes</h2>
             <ul>
                 {
                     quizzes.map((quiz) => {
                         return(
-                            <li>
-                                <Link to={`/courses/${courseId}/quizzes/${quiz._id}`}>
+                            <li className="list-group-item d-flex">
+                                <Link to={`/courses/${courseId}/quizzes/${quiz._id}`} className="mr-auto">
                                     {quiz.title}
+                                </Link>
+                                <Link to={`/courses/${courseId}/quizzes/${quiz._id}`}>
+                                    <button className="btn btn-primary">Start</button>
                                 </Link>
                             </li>
                         )
