@@ -2,17 +2,18 @@ import React, {useState} from "react";
 
 const MultipleChoiceQuestion = ({question}) => {
     const [yourAnswer, setYourAnswer] = useState("")
+    const [correctAnswer, setCorrectAnswer] = useState("")
     return(
         <div>
             <h5>
                 {question.question}
                 {
-                    question.correct === yourAnswer &&
-                    <i className="fas fa-check"></i>
+                    question.correct === correctAnswer &&
+                    <i className="fas fa-check color-green wbdv-icon-padding"></i>
                 }
                 {
-                    question.correct !== yourAnswer &&
-                    <i className="fas fa-times"></i>
+                    question.correct !== correctAnswer && correctAnswer !== "" &&
+                    <i className="fas fa-times color-red wbdv-icon-padding"></i>
                 }
             </h5>
             <ul className="list-group">
@@ -20,7 +21,8 @@ const MultipleChoiceQuestion = ({question}) => {
                     question.choices.map((choice) => {
                         return(
                             <li className={`list-group-item
-                            ${yourAnswer === question.correct ? 'list-group-item-success' : 'list-group-item-danger'}`}>
+                            ${question.correct === choice && correctAnswer !== '' ? 'list-group-item-success' : ''}
+                            ${correctAnswer !== question.correct && correctAnswer !== "" && correctAnswer === choice ? 'list-group-item-danger' : ''}`}>
                                 <label><input
                                     onClick={() => {
                                         setYourAnswer(choice)
@@ -35,9 +37,12 @@ const MultipleChoiceQuestion = ({question}) => {
             <p>
                 Your answer: {yourAnswer}
             </p>
-            <p>{question.correct}</p>
+            
+            <button class="btn btn-success" onClick={ () => setCorrectAnswer(yourAnswer)}>Grade</button>
+
+            {/* <p>{question.correct}</p>
             <p></p>
-            <p>{question.type}</p>
+            <p>{question.type}</p> */}
         </div>
     )
 }
