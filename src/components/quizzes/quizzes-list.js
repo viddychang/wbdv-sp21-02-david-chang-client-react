@@ -6,8 +6,8 @@ const QuizzesList = () => {
     const {courseId} = useParams()
     const [quizzes, setQuizzes] = useState([])
     useEffect(() => {
-        // TODO: move this to a service file
-        setQuizzes(quizzesService.findAllQuizzes())
+        quizzesService.findAllQuizzes()
+            .then(response => setQuizzes(response));
     }, [])
     return(
         <div>

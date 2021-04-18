@@ -8,8 +8,8 @@ const Quiz = () => {
     const {quizId} = useParams()
     const [questions, setQuestions] = useState([])
     useEffect(() => {
-        // TODO: move this to a service file
-        setQuestions(questionService.findQuestionsForQuiz(quizId))
+        questionService.findQuestionsForQuiz(quizId)
+            .then(response => setQuestions(response));
     }, [])
 
     return(
