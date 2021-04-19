@@ -1,10 +1,6 @@
 import React, {useState} from "react";
 
-const MultipleChoiceQuestion = ({
-                                  question,
-                                  graded,
-                                  questions,
-                                  setQuestions}) => {
+const MultipleChoiceQuestion = ({question}) => {
     const [yourAnswer, setYourAnswer] = useState("")
     const [correctAnswer, setCorrectAnswer] = useState("")
     return(
