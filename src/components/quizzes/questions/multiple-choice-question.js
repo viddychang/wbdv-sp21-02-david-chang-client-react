@@ -38,7 +38,7 @@ const MultipleChoiceQuestion = ({question}) => {
                 Your answer: {yourAnswer}
             </p>
             
-            <button class="btn btn-success" onClick={ () => setCorrectAnswer(yourAnswer)}>Grade</button>
+            {/* <button class="btn btn-success" onClick={ () => setCorrectAnswer(yourAnswer)}>Grade</button> */}
 
             {/* <p>{question.correct}</p>
             <p></p>

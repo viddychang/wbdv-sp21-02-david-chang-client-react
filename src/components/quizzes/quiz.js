@@ -3,6 +3,7 @@ import {useParams} from "react-router-dom";
 import Question from "./questions/question";
 import '../styles.css';
 import questionService from "../../services/questions-service"
+import quizzesService from "../../services/quizzes-service";
 
 const Quiz = () => {
     const {quizId} = useParams()
@@ -26,6 +27,9 @@ const Quiz = () => {
                     })
                 }
             </ul>
+            <button className="btn btn-success" onClick={()=>{quizzesService.submitQuiz(quizId,questions)}}>
+                Submit
+            </button>
         </div>
     )
 }
