@@ -27,7 +27,11 @@ const Quiz = () => {
             })
 
     }
-
+    
+    const submitTheQuiz = () => {
+        quizzesService.submitQuiz(quizId, questions)
+            .then((attempt) => setCurrentGrade(attempt.score))
+    }
 
     return(
         <div>
@@ -47,12 +51,20 @@ const Quiz = () => {
             <button className="btn btn-success wbdv-icon-padding" 
                         onClick={()=> {
                                         setGraded(true)
-                                        quizzesService.submitQuiz(quizId, questions)
+                                        submitTheQuiz()
+                                        
                                         getPastGrades()}}>
                 Submit
             </button>
             <br/>
             <br/>
+            <div className="wbdv-icon-padding">
+                {graded &&
+                <>
+                Your current score: {currentGrade}
+                </>
+                }
+            </div>
 
             <div className="wbdv-icon-padding">
                 {
