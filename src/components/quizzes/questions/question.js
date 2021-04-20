@@ -1,31 +1,40 @@
-import React from "react";
+import React, {useEffect, useState} from "react";
 import TrueFalseQuestion from "./true-false-question";
 import MultipleChoiceQuestion from "./multiple-choice-question";
 
+
 const Question = ({
                     question,
-                    quizId,
-                    graded,
-                    questions,
-                    setQuestions
+                    graded
+
                     }) => {
+    const [yourAnswer, setYourAnswer] = useState("")
+    // const [correctAnswer, setCorrectAnswer] = useState("")
+
+    useEffect(() => {
+        question.answer = yourAnswer;
+        // console.log(question.answer)
+    })
+
     return(
         <div>
             {
                 question.type === "TRUE_FALSE" &&
                 <TrueFalseQuestion question={question}
-                                   quizId={quizId}
+                                   yourAnswer={yourAnswer}
+                                   setYourAnswer={setYourAnswer}
                                    graded={graded}
-                                   questions={questions}
-                                   setQuestions={setQuestions}/>
+                                   
+                                   />
             }
             {
                 question.type === "MULTIPLE_CHOICE" &&
                 <MultipleChoiceQuestion question={question}
-                                        quizId={quizId}
+                                        yourAnswer={yourAnswer}
+                                        setYourAnswer={setYourAnswer}
                                         graded={graded}
-                                        questions={questions}
-                                        setQuestions={setQuestions}/>
+                                        
+                                        />
             }
         </div>
     )

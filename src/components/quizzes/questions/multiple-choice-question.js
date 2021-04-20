@@ -1,18 +1,17 @@
-import React, {useState} from "react";
+import React, {useEffect, useState} from "react";
 
-const MultipleChoiceQuestion = ({question}) => {
-    const [yourAnswer, setYourAnswer] = useState("")
-    const [correctAnswer, setCorrectAnswer] = useState("")
+const MultipleChoiceQuestion = ({question, graded, setGraded, yourAnswer, setYourAnswer, correctAnswer}) => {
+
     return(
         <div>
             <h5>
                 {question.question}
                 {
-                    question.correct === correctAnswer &&
+                    question.correct === yourAnswer && graded &&
                     <i className="fas fa-check color-green wbdv-icon-padding"></i>
                 }
                 {
-                    question.correct !== correctAnswer && correctAnswer !== "" &&
+                    question.correct !== yourAnswer && graded &&
                     <i className="fas fa-times color-red wbdv-icon-padding"></i>
                 }
             </h5>
@@ -21,11 +20,12 @@ const MultipleChoiceQuestion = ({question}) => {
                     question.choices.map((choice) => {
                         return(
                             <li className={`list-group-item
-                            ${question.correct === choice && correctAnswer !== '' ? 'list-group-item-success' : ''}
-                            ${correctAnswer !== question.correct && correctAnswer !== "" && correctAnswer === choice ? 'list-group-item-danger' : ''}`}>
+                            ${question.correct === choice && graded ? 'list-group-item-success' : ''}
+                            ${yourAnswer !== question.correct && graded && yourAnswer === choice ? 'list-group-item-danger' : ''}`}>
                                 <label><input
                                     onClick={() => {
                                         setYourAnswer(choice)
+                                        question.answer = yourAnswer
                                     }}
                                     type="radio"
                                     name={question._id}/> {choice}</label>

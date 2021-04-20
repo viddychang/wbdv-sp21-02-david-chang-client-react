@@ -1,26 +1,25 @@
 
 import React, {useState} from "react";
 
-const TrueFalseQuestion = ({question}) => {
-    const [yourAnswer, setYourAnswer] = useState("")
-    const [correctAnswer, setCorrectAnswer] = useState("")
+const TrueFalseQuestion = ({question, graded, setGraded, yourAnswer, setYourAnswer, correctAnswer}) => {
+
 
     return(
         <div>
             <h5>
                 {question.question}
                 {
-                    question.correct === correctAnswer &&
+                    question.correct === yourAnswer && graded &&
                     <i className="fas fa-check color-green wbdv-icon-padding"></i>
                 }
                 {
-                    question.correct !== correctAnswer && correctAnswer !== "" &&
+                    question.correct !== yourAnswer && graded &&
                     <i className="fas fa-times color-red wbdv-icon-padding"></i>
                 }
             </h5>
             <li className={`list-group-item
-                            ${question.correct === 'true' && correctAnswer !== '' ? 'list-group-item-success' : ''}
-                            ${correctAnswer !== question.correct && correctAnswer !== "" && correctAnswer === 'true' ? 'list-group-item-danger' : ''}`}>
+                            ${question.correct === 'true' && graded ? 'list-group-item-success' : ''}
+                            ${yourAnswer !== question.correct && graded && yourAnswer === 'true'? 'list-group-item-danger' : ''}`}>
                                 <label><input
                                     onClick={() => {
                                         setYourAnswer('true')
@@ -29,8 +28,8 @@ const TrueFalseQuestion = ({question}) => {
                                     name={question._id}/> True</label>
             </li>
             <li className={`list-group-item
-                            ${question.correct === 'false' && correctAnswer !== '' ? 'list-group-item-success' : ''}
-                            ${correctAnswer !== question.correct && correctAnswer !== "" && correctAnswer === 'false' ? 'list-group-item-danger' : ''}`}>
+                            ${question.correct === 'false' && graded ? 'list-group-item-success' : ''}
+                            ${yourAnswer !== question.correct && graded && yourAnswer === 'false' ? 'list-group-item-danger' : ''}`}>
                                 <label><input
                                     onClick={() => {
                                         setYourAnswer('false')

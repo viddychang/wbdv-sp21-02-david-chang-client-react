@@ -8,10 +8,26 @@ import quizzesService from "../../services/quizzes-service";
 const Quiz = () => {
     const {quizId} = useParams()
     const [questions, setQuestions] = useState([])
+    const [attempts, setAttempts] = useState([])
+    const [graded, setGraded] = useState(false)
+    const [currentGrade, setCurrentGrade] = useState('')
+
     useEffect(() => {
         questionService.findQuestionsForQuiz(quizId)
-            .then(response => setQuestions(response));
-    }, [])
+            .then((questions) => {
+                setQuestions(questions)
+            })
+
+    }, [quizId])
+
+    const getPastGrades = () => {
+        quizzesService.getQuizAttemptsForQuiz(quizId)
+            .then((attempts) => {
+                setAttempts(attempts)
+            })
+
+    }
+
 
     return(
         <div>
@@ -21,17 +37,47 @@ const Quiz = () => {
                     questions.map((question) => {
                         return(
                             <li className="list-group-item w-75">
-                                <Question question={question}/>
+                                <Question question={question}
+                                        graded={graded}/>
                             </li>
                         )
                     })
                 }
-            </ul>
-            <button className="btn btn-success" onClick={()=>{quizzesService.submitQuiz(quizId,questions)}}>
+
+            <button className="btn btn-success wbdv-icon-padding" 
+                        onClick={()=> {
+                                        setGraded(true)
+                                        quizzesService.submitQuiz(quizId, questions)
+                                        getPastGrades()}}>
                 Submit
             </button>
+            <br/>
+            <br/>
+
+            <div className="wbdv-icon-padding">
+                {
+                graded &&
+                <>
+            
+                Your Past Results:
+                    <ol className="list-group">
+                        {
+                            attempts.map((attempt) => {
+                                return (
+                                    <li className="list-group-item">{attempt.score}</li>
+                                )
+
+                            })
+                        }
+                    </ol>
+                </>
+            }
+            </div>
+            </ul>
+
         </div>
     )
 }
 
 export default Quiz;
+
